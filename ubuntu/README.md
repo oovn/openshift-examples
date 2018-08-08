@@ -41,7 +41,7 @@ EOF
 ```
 
 ```sh
-wget https://github.com/mikefarah/yq/releases/download/1.14.0/yq_linux_amd64
+wget https://github.com/mikefarah/yq/releases/download/2.1.1/yq_linux_amd64
 chmod + yq_linux_amd64 && mv yq_linux_amd64 /usr/local/bin/yq
 
 cp /var/lib/origin/openshift.local.config/master/master-config.yaml config.yaml
