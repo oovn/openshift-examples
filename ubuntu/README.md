@@ -18,15 +18,15 @@ mv openshift-origin-client-tools-*-linux-64bit/oc /usr/bin/
 ```
 
 ```sh
-oc cluster up --public-hostname='cr.xfc.io' --routing-suffix='cr.xfc.io'
+oc cluster up --public-hostname='lamit.win' --routing-suffix='lamit.win'
 apt-get install software-properties-common
 add-apt-repository ppa:certbot/certbot
 apt-get update
 apt-get install certbot
-mkdir -p /var/www/cr.xfc.io
+mkdir -p /var/www/lamit.win
 oc cluster down
-certbot certonly --standalone -w /var/www/cr.xfc.io -d cr.xfc.io  --email 9chakri@gmail.com
-/etc/letsencrypt/live/cr.xfc.io/
+certbot certonly --standalone -w /var/www/lamit.win -d lamit.win  --email binhbat@live.com
+/etc/letsencrypt/live/lamit.win/
 ```
 
 ```sh
@@ -36,7 +36,7 @@ namedCertificates:
 - certFile: fullchain.pem
   keyFile: privkey.pem
   names:
-  - "cr.xfc.io"
+  - "lamit.win"
 EOF
 ```
 
@@ -47,8 +47,8 @@ chmod + yq_linux_amd64 && mv yq_linux_amd64 /usr/local/bin/yq
 cp /var/lib/origin/openshift.local.config/master/master-config.yaml config.yaml
 yq merge patch.yaml config.yaml > /var/lib/origin/openshift.local.config/master/master-config.yaml
 
-cp /etc/letsencrypt/live/cr.xfc.io/fullchain.pem var/lib/origin/openshift.local.config/master
-cp /etc/letsencrypt/live/cr.xfc.io/privkey.pem /var/lib/origin/openshift.local.config/master
+cp /etc/letsencrypt/live/lamit.win/fullchain.pem var/lib/origin/openshift.local.config/master
+cp /etc/letsencrypt/live/lamit.win/privkey.pem /var/lib/origin/openshift.local.config/master
 
-oc cluster up --public-hostname='cr.xfc.io' --routing-suffix='cr.xfc.io' --use-existing-config=true
+oc cluster up --public-hostname='lamit.win' --routing-suffix='lamit.win' --use-existing-config=true
 ```
