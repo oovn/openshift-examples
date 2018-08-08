@@ -12,7 +12,7 @@ docker ps
 ```
 
 ```sh
-wget https://github.com/openshift/origin/releases/download/v3.10.0/openshift-origin-client-tools-v3.10.0-dd10d17-linux-64bit.tar.gz
+wget https://github.com/openshift/origin/releases/download/v3.9.0/openshift-origin-client-tools-v3.9.0-191fece-linux-64bit.tar.gz
 tar -xvf openshift-origin-client-tools-*-linux-64bit.tar.gz
 mv openshift-origin-client-tools-*-linux-64bit/oc /usr/bin/
 ```
@@ -31,5 +31,5 @@ certbot certonly --standalone -w /var/www/lamit.win -d lamit.win  --email binhba
 openshift_master_named_certificates=[{"certfile":"/etc/letsencrypt/live/lamit.win/fullchain.pem","keyfile":"/etc/letsencrypt/live/lamit.win/privkey.pem","names":["lamit.win"]}]
 
 ```
-oc cluster up --public-hostname='lamit.win' --routing-suffix='lamit.win' --use-existing-config=true
+oc cluster up --public-hostname='192.168.1.22' --routing-suffix='okd.lamit.win' --use-existing-config=true
 ```
